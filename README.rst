@@ -11,7 +11,7 @@ Features
 ============
 Embed content within a page or blog post easily, simply by specifying the URL of
 the target page. Content is automatically recognised, extracted, and formatted as
-a `card'; this may contain a short article preview, embedded video, picture etc.
+a 'card'; this may contain a short article preview, embedded video, picture etc.
 
 To preview a card, they can be generated online using `Embed.ly <http://embed.ly/cards>`_.
 Almost any site is compatible, including YouTube, Flickr, Google+, Maps, Wordpress etc.
