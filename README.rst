@@ -4,6 +4,8 @@ Embedly-Cards
 Embedly-cards is a Pelican_ plugin providing restucturedText directives to allow
 easy embedding of external content using `Embed.ly Cards <http://embed.ly/cards>`_.
 
+`Live examples <http://iza.ac/posts/2014/03/embedly-cards/>`_ can also be viewed from a Pelican-built website.
+
 .. _Pelican: http://getpelican.com
 
 
