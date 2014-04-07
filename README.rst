@@ -92,12 +92,14 @@ Options
 The ``card-chrome`` (ReST) or ``chrome`` (markdown) option, if provided, specifies
 whether or not to preserve the border around the card. By default, the border
 will be removed automatically *if Embed.ly supports it*; however to force the
-border to remain, you may pass ``:card-chrome: 1``: (ReST) or ``chrome=1`` (markdown):
+border to remain, you may pass ``:card-chrome: 1`` (ReST),
 
 .. code-block:: ReST
 
     .. embedly-card:: https://www.youtube.com/watch?v=ZlfIVEy_YOA
         :card-chrome: 1
+        
+ or ``chrome=1`` (markdown):
 
 .. code-block::
 
