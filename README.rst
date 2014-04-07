@@ -99,7 +99,7 @@ border to remain, you may pass ``:card-chrome: 1`` (ReST),
     .. embedly-card:: https://www.youtube.com/watch?v=ZlfIVEy_YOA
         :card-chrome: 1
 
- or ``chrome=1`` (markdown):
+or ``chrome=1`` (markdown):
 
 .. code-block::
 
