@@ -4,7 +4,7 @@ Embedly-Cards
 Embedly-cards is a Pelican_ plugin providing restucturedText directives to allow
 easy embedding of external content using `Embed.ly Cards <http://embed.ly/cards>`_.
 
-`Live examples <http://iza.ac/posts/2014/03/embedly-cards/>`_ can also be viewed from a Pelican-built website.
+`ReST <http://iza.ac/posts/2014/03/embedly-cards/>`_ and `markdown <http://iza.ac/posts/2014/04/embedly-cards-v02-markdown-support/>`_ live examples can also be viewed from a Pelican-built website.
 
 .. _Pelican: http://getpelican.com
 
@@ -23,24 +23,38 @@ Installation
 Embedly-cards can be installed using `pip`
 
 .. code-block:: bash
-	
-	$ pip install embedly-cards
+    
+    $ pip install embedly-cards
 
 or manually from the source code
 
 .. code-block:: bash
 
-	$ python setup.py install
+    $ python setup.py install
 
-Once installed, simply add it to your `pelicanconf.py` configuration file:
+Once installed, simply add it to your ``pelicanconf.py`` configuration file:
 
 .. code-block:: python
 
-	PLUGINS = [
-	    # ...
-	    'embedly_cards'
-	]
+    PLUGINS = [
+        # ...
+        'embedly_cards'
+    ]
 
+If you are planning on embedding content in markdown ``.md`` files,
+you must also add it to the ``MD_EXTENSIONS`` options, like so:
+
+.. code-block:: python
+    from embedly_cards import EmbedlyCardExtension
+    MD_EXTENSIONS = ['codehilite(css_class=highlight)',
+                     'extra',
+                     # ...
+                     EmbedlyCardExtension()]
+
+.. important::
+    If creating the ``MD_EXTENSIONS`` variable for the first time,
+    ensure that the Pelican ``'codehilite(css_class=highlight)'``
+    and ``'extra'`` markdown extensions are included in the list.
 
 Usage
 ============
@@ -48,17 +62,25 @@ Usage
 In order to embed content within a restucturedText blog post/article, you can use
 the `embedly-card` directive.
 
-For example, to embed a YouTube video,
+For example, to embed a YouTube video:
 
 .. code-block:: ReST
 
-	.. embedly-card:: https://www.youtube.com/watch?v=ZlfIVEy_YOA
+    .. embedly-card:: https://www.youtube.com/watch?v=ZlfIVEy_YOA
+
+.. code-block::
+
+    [!embedlycard](https://www.youtube.com/watch?v=ZlfIVEy_YOA)
 
 Or to embed an article/webpage:
 
 .. code-block:: ReST
-	
-	.. embedly-card:: http://physics.stackexchange.com/questions/5265/cooling-a-cup-of-coffee-with-help-of-a-spoon
+    
+    .. embedly-card:: http://physics.stackexchange.com/questions/5265/cooling-a-cup-of-coffee-with-help-of-a-spoon
+    
+.. code-block::
+
+    [!embedlycard](http://physics.stackexchange.com/questions/5265/cooling-a-cup-of-coffee-with-help-of-a-spoon)
 
 Options
 ========
@@ -70,6 +92,9 @@ border around the card. By default, the border will be removed automatically
 
 .. code-block:: ReST
 
-	.. embedly-card:: https://www.youtube.com/watch?v=ZlfIVEy_YOA
-		:card-chrome: 1
+    .. embedly-card:: https://www.youtube.com/watch?v=ZlfIVEy_YOA
+        :card-chrome: 1
 
+.. code-block::
+
+    [!embedlycard?chrome=1](https://www.youtube.com/watch?v=ZlfIVEy_YOA)
