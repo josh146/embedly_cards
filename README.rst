@@ -70,7 +70,7 @@ For example, to embed a YouTube video in ReStructuredText:
 
 or in markdown:
 
-.. code-block::
+.. code-block:: md
 
     [!embedlycard](https://www.youtube.com/watch?v=ZlfIVEy_YOA)
 
@@ -82,7 +82,7 @@ Or to embed an article/webpage in ReStructuredText:
     
 or in markdown:
 
-.. code-block::
+.. code-block:: md
 
     [!embedlycard](http://physics.stackexchange.com/questions/5265/cooling-a-cup-of-coffee-with-help-of-a-spoon)
 
@@ -101,6 +101,6 @@ border to remain, you may pass ``:card-chrome: 1`` (ReST),
 
 or ``chrome=1`` (markdown):
 
-.. code-block::
+.. code-block:: md
 
     [!embedlycard?chrome=1](https://www.youtube.com/watch?v=ZlfIVEy_YOA)
