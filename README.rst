@@ -4,7 +4,9 @@ Embedly-Cards
 Embedly-cards is a Pelican_ plugin providing restucturedText directives to allow
 easy embedding of external content using `Embed.ly Cards <http://embed.ly/cards>`_.
 
-`ReST <http://iza.ac/posts/2014/03/embedly-cards/>`_ and `markdown <http://iza.ac/posts/2014/04/embedly-cards-v02-markdown-support/>`_ live examples can also be viewed from a Pelican-built website.
+`ReST <http://iza.ac/posts/2014/03/embedly-cards/>`_ and
+`markdown <http://iza.ac/posts/2014/04/embedly-cards-v02-markdown-support/>`_
+live examples can also be viewed from a Pelican-built website.
 
 .. _Pelican: http://getpelican.com
 
@@ -45,6 +47,7 @@ If you are planning on embedding content in markdown ``.md`` files,
 you must also add it to the ``MD_EXTENSIONS`` options, like so:
 
 .. code-block:: python
+
     from embedly_cards import EmbedlyCardExtension
     MD_EXTENSIONS = ['codehilite(css_class=highlight)',
                      'extra',
@@ -59,25 +62,26 @@ you must also add it to the ``MD_EXTENSIONS`` options, like so:
 Usage
 ============
 
-In order to embed content within a restucturedText blog post/article, you can use
-the `embedly-card` directive.
-
-For example, to embed a YouTube video:
+For example, to embed a YouTube video in ReStructuredText:
 
 .. code-block:: ReST
 
     .. embedly-card:: https://www.youtube.com/watch?v=ZlfIVEy_YOA
 
+or in markdown:
+
 .. code-block::
 
     [!embedlycard](https://www.youtube.com/watch?v=ZlfIVEy_YOA)
 
-Or to embed an article/webpage:
+Or to embed an article/webpage in ReStructuredText:
 
 .. code-block:: ReST
     
     .. embedly-card:: http://physics.stackexchange.com/questions/5265/cooling-a-cup-of-coffee-with-help-of-a-spoon
     
+or in markdown:
+
 .. code-block::
 
     [!embedlycard](http://physics.stackexchange.com/questions/5265/cooling-a-cup-of-coffee-with-help-of-a-spoon)
@@ -85,10 +89,10 @@ Or to embed an article/webpage:
 Options
 ========
 
-The `card-chrome` option, if provided, specifies whether or not to preserve the
-border around the card. By default, the border will be removed automatically
-*if Embed.ly supports it*; however to force the border to remain, you may pass
-``:card-chrome: 1``:
+The ``card-chrome`` (ReST) or ``chrome`` (markdown) option, if provided, specifies
+whether or not to preserve the border around the card. By default, the border
+will be removed automatically *if Embed.ly supports it*; however to force the
+border to remain, you may pass ``:card-chrome: 1``: (ReST) or ``chrome=1`` (markdown):
 
 .. code-block:: ReST
 
